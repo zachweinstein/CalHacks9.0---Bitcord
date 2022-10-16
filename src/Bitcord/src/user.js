@@ -8,8 +8,8 @@ function create_user(){
     var alias = document.getElementById('username').value;
     var pass = document.getElementById('password').value;
     var food = document.getElementById('favoritefood').value;
-
-    current_user = {alias: alias, password: pass, food: food, own_hubs, hubs};
+    var secretKey = Uint8Array.from(generate_key());
+    current_user = {alias: alias, password: pass, secretkey: };
     users.put(alias + pass)
     current_user = users.get(alias + pass).put(current_user);
 
@@ -25,4 +25,12 @@ function login(){
     current_user.on((data) =>{
         console.log(data);
     });
+}
+
+function generate_key(){
+    var key = Array(64);
+    for(let i = 0; i < key.length; i++){
+        key[i] = Math.floor(Math.random * 255 + 1);
+    }
+    return key;
 }
