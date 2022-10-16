@@ -1,0 +1,65 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": "eslint:recommended",
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "jsx": true,
+    "modules": true,
+    "ecmaVersion": "2020",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "eol-last": "warn",
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ignoredNodes": ["TemplateLiteral"]
+      }
+    ],
+    "keyword-spacing": [
+      "warn", {
+        "before": true,
+        "after": true,
+        "overrides": {
+          "if": { "after":  false },
+          "for": { "after": false },
+          "while": { "after":  false },
+          "switch": { "after": false },
+          "catch": { "after": false }
+        }
+      }],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "no-case-declarations": "off",
+    "no-multiple-empty-lines": [
+      "warn", {
+        "max": 1
+      }
+    ],
+    "no-trailing-spaces": "warn",
+    "no-undef": "off",
+    "no-useless-escape": "off",
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/react-in-jsx-scope": 2,
+    "semi": [
+      "error",
+      "always"
+    ],
+    "template-curly-spacing": "off"
+  }
+}

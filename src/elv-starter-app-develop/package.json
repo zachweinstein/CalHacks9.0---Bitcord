@@ -1,0 +1,60 @@
+{
+  "name": "@eluvio/elv-starter-app",
+  "version": "1.0.2",
+  "description": "A project template for creating an Eluvio application using React, Mobx, and elv-client-js.",
+  "main": "index.js",
+  "author": "Eluvio, Inc.",
+  "license": "MIT",
+  "scripts": {
+    "serve": "webpack-dev-server --hot --host 0.0.0.0",
+    "build": "rm -rf dist/* && webpack-cli --mode production --no-devtool",
+    "lint": "npm run fix-scss ; npm run lint-scss ; npm run fix-js",
+    "fix-scss": "sass-lint-auto-fix -c .scss-lint.yml",
+    "lint-scss": "stylelint \"src/**/*.scss\"",
+    "lint-js": "./node_modules/.bin/eslint \"src/**/*.js\"",
+    "fix-js": "npm run lint-js -- --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@eluvio/elv-client-js": "^3.2.33",
+    "mobx": "^6.6.2",
+    "mobx-react": "^7.5.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.19.3",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "copy-webpack-plugin": "^11.0.0",
+    "crypto-browserify": "^3.12.0",
+    "css-loader": "^6.7.1",
+    "eslint": "7.32.0",
+    "eslint-plugin-react": "^7.31.10",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.1",
+    "image-webpack-loader": "^8.1.0",
+    "process": "^0.11.10",
+    "sass": "^1.55.0",
+    "sass-lint-auto-fix": "^0.21.2",
+    "sass-loader": "^13.1.0",
+    "stream-browserify": "^3.0.0",
+    "style-loader": "^3.3.1",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "5.72.1",
+    "webpack-cli": "4.9.2",
+    "webpack-dev-server": "4.9.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  }
+}
