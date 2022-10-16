@@ -1,14 +1,18 @@
 <html>
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gun/gun.js"></script>
     <script>var gun = Gun();</script>
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
     <script>console.log(solanaWeb3);</script>
     <script src="user.js"></script>
+    <script>
+        var loggedin = false;
+    </script>
+    <label>Message: </label><input type="text" id="message" name="message">
+    <button onclick="send_message()">Send Message</button>
+    <br />
     <label>Username: </label><input type="text" id="username" name="username">
     <br />
     <label>Password: </label> <input type="text" id="password" name="password">
-    <br />
-    <label>Favorite Food: </label> <input type="text" id="favoritefood" name="favoritefood">
     <br />
     <button onclick="login()">Login</button>
     <br />
