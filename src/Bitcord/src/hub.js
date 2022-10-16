@@ -1,14 +1,11 @@
 
-function hub(name, user){
-    this.name = name;
-    this.user = user;
-
-    // this is where we will create hub information
+class Hub{
+    constructor(creator, name){
+        this.creator = creator;
+        this.name = name;
+    }
 }
 
-function create_hub(hub_name){
-    gun.get(user).set({hubs: new hub(hub_name, user)});
-
-    // code to create a 'server' or hub
-    // do
+function create_hub(name){
+    current_user.get('hubs').put(new Hub(current_user.get('alias'), name));
 }
